@@ -1,0 +1,61 @@
+    1. What columns violate 1NF?
+- member_adress column: each value should be atomic(non-divisible).
+- food_description, food_code: each cell should contain only ONE value.
+- dinner_date column: date should have one type. 
+
+    2. What entities do you recognize that could be extracted?
+Members:
+member_id
+member_name
+member_address
+
+Dinners:
+dinner_id
+dinner_date
+
+Venues:
+venue_code
+venue_description
+
+Foods:
+food_code
+food_description
+
+
+    3. Name all the tables and columns that would make a 3NF compliant solution.
+
+Table: Members
+Columns:
+member_id (Primary Key)
+member_name
+member_address
+
+Table: Dinners
+Columns:
+dinner_id (Primary Key)
+dinner_date
+
+Table: Venues
+Columns:
+venue_code (Primary Key)
+venue_description
+
+Table: Foods
+Columns:
+food_code (Primary Key)
+food_description
+
+Table: Dinner_Members
+Columns:
+dinner_id (Foreign Key referencing Dinners table)
+member_id (Foreign Key referencing Members table)
+
+Table: Dinner_Venues
+Columns:
+dinner_id (Foreign Key referencing Dinners table)
+venue_code (Foreign Key referencing Venues table)
+
+Table: Dinner_Foods
+Columns:
+dinner_id (Foreign Key referencing Dinners table)
+food_code (Foreign Key referencing Foods table)
