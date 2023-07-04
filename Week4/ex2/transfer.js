@@ -1,18 +1,12 @@
-// transfer.js
-
 import mongo from "mongodb";
 import express from "express";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import dotenv from "dotenv";
-// import csv from "csv-parser";
-// import fs from "fs";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
 
-// const uri = process.env.MONGODB;
-// const client = new MongoClient(uri);
 export const client = new MongoClient(process.env.MONGODB, {
   serverApi: {
     version: ServerApiVersion.v1,
